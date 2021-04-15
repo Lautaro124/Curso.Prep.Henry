@@ -175,19 +175,7 @@ function esPrimo(numero) {
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
 
-  let control = false
-
-  for (var i = 1; i >= numero-1; i++) {
-    
-    if (numero % i == 0) {
-      control = true
-    }
-  }
-  if (control == true) {
-      return true
-    }else{
-      return false
-    }
+  
 }
 
 function esVerdadero(valor){
@@ -218,11 +206,7 @@ function tablaDelSeis(){
 function tieneTresDigitos(numero){
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí
-  if(numero>= 100 && numero < 1000){
-    return true
-  }else {
-    return false
-  }
+  
 }
 
 function doWhile(numero) {
@@ -230,12 +214,14 @@ function doWhile(numero) {
   //Retornar el valor final.
   //Usar el bucle do ... while.
 
-  let contador= 1
+  let contador= 0
 
   while( contador != 8){
     contador++
     numero = numero + 5
     }
+    
+      return numero
 }
 
 
