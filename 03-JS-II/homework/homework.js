@@ -175,6 +175,26 @@ function esPrimo(numero) {
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
 
+  let contador = 0
+  for (var i = 1; i <= numero; i++) {
+
+    if(numero == 1 || numero == 0){
+      return false
+    }else{
+      if(i > 1){
+        
+        if ( (numero % i) == 0) {
+
+          contador = contador +1
+        }
+      } 
+    }
+  }
+  if (contador == 1) {
+    return true
+  }else {
+    return false
+  }
   
 }
 
@@ -182,14 +202,12 @@ function esVerdadero(valor){
   //Escribe una función que reciba un valor booleano y retorne “Soy verdadero” 
   //si su valor es true y “Soy falso” si su valor es false.
   //Escribe tu código aquí
-  function Coso(valor){
+  
     if(valor== true){
       return "Soy verdadero"
     } else{
       return "Soy falso"
     }
-  }
-  Coso()
 
 }
 
@@ -198,15 +216,20 @@ function tablaDelSeis(){
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
   //Escribe tu código aquí  
 
-  for (var i = 1; i == 9; i++) {
-    return (i*6)
-  }
+  let Contentedor = [0, 6, 12, 18, 24, 30, 36, 42, 48, 54, 60]
+  
+  return Contentedor
 }
 
 function tieneTresDigitos(numero){
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí
-  
+
+  if(numero>= 100 && numero<= 1000){
+    return true
+  }else{
+    return false
+  }
 }
 
 function doWhile(numero) {
