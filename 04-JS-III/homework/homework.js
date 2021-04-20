@@ -285,22 +285,30 @@ function breakStatement(numero) {
   //Pista: usá el statement 'break'
   // Tu código:
 
-  var save = []
+  var Guardado = []
+  var x = true;
+  var valor= 1 ;
+  var contador = 0;
   
-  for (var i = 0; i < numero.length; i++) {
-    
-    var valor 
-    for (var x = 0; x < 10; x++) {
-      valor = numero[i] + 2
+  while ( contador< 10){
 
-      if(x == valor){
-        return "Se interrumpió la ejecución"
-      }
+    if (valor == contador || x == false) {
+      return "Se interrumpió la ejecución"
+      x = false
+
+      break
     }
-    save.push(valor)
+    else{
+      valor = numero + 2
+      Guardado.push(valor)
+      contador++ 
+    }
   }
 
-  return save
+  if (x= true) {
+    return Guardado
+  }
+
 }
 
 
@@ -311,7 +319,29 @@ function continueStatement(numero) {
   //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
   //Pista: usá el statement 'continue'
   // Tu código:
-}
+
+  var save = []
+  var valor = 0;
+  var contador = 0;
+
+    while (contador < 10){
+      contador++
+
+      valor = numero + 2
+
+      if (4 == contador) {
+        valor = numero - 2
+
+        continue
+      }else{
+
+        save.push(valor)
+      }
+    }
+  
+      return save 
+    
+  }
 
 
 // No modificar nada debajo de esta línea
