@@ -190,9 +190,10 @@ function empiezaConNueve(n) {
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
   
-  
+  var numero = n.toString()
+  var dato = numero.charAt(0)
 
-  if (n == 9 || n >= 90 || n <= 99 || n>= 900|| n <= 999 ) {
+  if (dato == "9") {
     return true
   }else {
     return false
@@ -204,21 +205,17 @@ function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
   //Escribe tu código aquí  
-  var test = 0
-  for (var i = 0; i < arreglo.length; i++) {
-    
-    if(arreglo[i] == arreglo[i + 1]){
-      test= 1;
-    }
-    else{
-      test = 2;
-      return false
-    }
-  }
+  var test = arreglo[0]
 
-  if (test == 1) {
-    return true
+  
+  for (var i = 1; i < arreglo.length; i++) {
+    
+    if(arreglo[i] == test){
+      return true
+    }
   }
+ 
+    return false
 } 
 
 
@@ -227,6 +224,36 @@ function mesesDelAño(array) {
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
+ var array2 = []
+
+ for (var i = 0; i <= array.length; i++) {
+   
+   if("Enero" == array[i]){
+
+    array2[2] = "Enero"
+
+   }else if ("Marzo" == array[i]) {
+      
+      array2[0]= "Marzo"
+
+    }else if ("Noviembre" == array[i]) {
+
+      array2[1]= "Noviembre"
+    }
+ }
+
+ 
+   if (array2[2] == "Enero") {
+    if (array2[0] == "Marzo") {
+      if (array2[1] == "Noviembre") {
+
+        return array2
+      }
+    }
+   }
+   
+   return "No se encontraron los meses pedidos"
+
 }
 
 
@@ -234,6 +261,18 @@ function mayorACien(array) {
   //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
   //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
   // Tu código:
+
+  var array2 = []
+
+  for (var i = 0; i <= array.length; i++) {
+    
+    if (array[i] > 100) {
+      var valor = array[i]
+
+      array2.push(valor)
+    }
+  }
+  return array2
 }
 
 
@@ -245,6 +284,23 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
+
+  var save = []
+  
+  for (var i = 0; i < numero.length; i++) {
+    
+    var valor 
+    for (var x = 0; x < 10; x++) {
+      valor = numero[i] + 2
+
+      if(x == valor){
+        return "Se interrumpió la ejecución"
+      }
+    }
+    save.push(valor)
+  }
+
+  return save
 }
 
 
