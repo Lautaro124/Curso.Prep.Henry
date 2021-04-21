@@ -287,26 +287,27 @@ function breakStatement(numero) {
 
   var Guardado = []
   var x = true;
-  var valor= 1 ;
   var contador = 0;
   
   while ( contador< 10){
 
-    if (valor == contador || x == false) {
-      return "Se interrumpió la ejecución"
+    if (numero == contador || x == false) {
+      
       x = false
 
       break
     }
     else{
-      valor = numero + 2
-      Guardado.push(valor)
+      numero = numero + 2
+      Guardado.push(numero)
       contador++ 
     }
   }
 
-  if (x= true) {
+  if (x == true) {
     return Guardado
+  }else if(x == false) {
+    return "Se interrumpió la ejecución"
   }
 
 }
@@ -321,21 +322,18 @@ function continueStatement(numero) {
   // Tu código:
 
   var save = []
-  var valor = 0;
   var contador = 0;
 
     while (contador < 10){
       contador++
 
-      valor = numero + 2
+      
 
       if (4 == contador) {
-        valor = numero - 2
-
         continue
       }else{
-
-        save.push(valor)
+        numero = numero + 2
+        save.push(numero)
       }
     }
   
