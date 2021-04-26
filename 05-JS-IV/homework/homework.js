@@ -106,21 +106,19 @@ function tienePropiedad(objeto, propiedad) {
   // De lo contrario, devuelve "false"
   // Tu código:
 
-  var i = true
-
-  var conten = objeto.propiedad
+  var i = false
   for(let key in objeto){
-    if (conten == key) {
-      i = false
+    if (key == propiedad) {
+      i = true
     }
   }
-    
+  if (i == true) {
+    return true
+  }   else{
+    return false
+  }
+  
 
-    if (i == false) {
-      return true
-    }else if (i == true) {}{
-      return false
-    }
   }
 
 function verificarPassword(usuario, password) {
@@ -152,7 +150,7 @@ function agregarAmigo(usuario, nuevoAmigo) {
   // Agrega "nuevoAmigo" al final de ese array
   // Devuelve el objeto "usuario"
   // // Tu código:
-  usuario["nuevoAmigo"] = nuevoAmigo
+  usuario["amigos"].push(nuevoAmigo)  
 
   return usuario
 }
@@ -163,8 +161,11 @@ function pasarUsuarioAPremium(usuarios) {
   // Define cada propiedad "esPremium" de cada objeto como "true"
   // Devuelve el array de usuarios
   // Tu código:
+   for (var i = 0; i < usuarios.length; i++) {
+     usuarios[i]["esPremium"] = true
+   }
 
-  
+   return usuarios
 }
 
 function sumarLikesDeUsuario(usuario) {
@@ -174,6 +175,16 @@ function sumarLikesDeUsuario(usuario) {
   // Suma todos los likes de todos los objetos "post"
   // Devuelve la suma
   // Tu código:
+
+  var suma = 0;
+  var con = 0;
+  for (var i = 0; i < usuario["posts"].length; i++) {
+
+    con = i + 1
+    suma = usuario["posts"][i].likes + suma
+  }
+
+  return suma
 }
 
 function agregarMetodoCalculoDescuento(producto) {
@@ -187,6 +198,11 @@ function agregarMetodoCalculoDescuento(producto) {
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
 
+  producto["calcularPrecioDescuento"] = () => {
+    return producto.precio - (producto.precio  * producto.porcentajeDeDescuento) 
+  }
+
+  return producto
 }
 
 // No modificar nada debajo de esta línea
