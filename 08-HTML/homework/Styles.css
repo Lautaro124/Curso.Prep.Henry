@@ -1,0 +1,16 @@
+h1 {
+	color: maroon;
+}
+img {
+	width: 400px;
+}
+#thirdDiv {
+	background-color: aquamarine;
+
+	padding: 50px;
+
+	border: 15px solid blue;
+}
+#spanID {
+	font-size: 18px;
+}
